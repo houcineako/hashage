@@ -1,0 +1,89 @@
+h1{
+    color:  blanchedalmond;
+    background-color: pink;
+ }
+ h2{
+    color: red;
+    text-decoration-line:underline
+    ; 
+
+ } 
+h3{
+    color: rgb(26, 11, 16);
+}
+h4{
+    color: black;
+}
+body{
+
+    background: pink;
+
+    font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+    padding: 0;
+}
+li{
+    color: rgb(5, 5, 1);
+
+}
+button{
+    background-color: rgba(124, 38, 38, 0.27); 
+    border: none;
+    color: brown;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: underline;
+    
+    display: inline-block;
+    font-size: 16px;
+}
+header{
+    background: pink;
+    color: white;
+    padding: 20px;
+
+}
+header .logo{
+    background-image: url("images/22654478-generatif-ai-illustration-de-valentin-journee-arriere-plan-aimer-romantique-concept-coeur-forme-neural-reseau-genere-art-numeriquement-genere-image-ne-pas-base-sur-tout-reel-scene-ou-modele-photo.jpg");
+    background-size: 150px;
+    display:  inline-block;
+    height : 200px;
+    text-indent: -99999999px;
+    width: 300px;
+    }
+section{
+    background: pink; 
+    color:  pink;
+    padding: 20px;
+    display: flex;
+    flex-direction: row
+;
+
+}
+footer{
+    background: rgb(187, 115, 149);
+    background-image: url("images/353662856_1693542777761261_2411091884541237765_n.jpg");
+    color : white;
+    background-size: 79%;
+    background-position: center;
+    height: 900px;
+    text-align: center;
+    padding: 20px;
+}
+div{
+    background: rgb(4, 4, 111);
+    width: 100px;
+    display: inline-block;
+    margin: auto;
+
+}
+ul{
+    margin:0;
+    padding: 0;
+    list-style-type: none;
+
+}
+li{
+    display: inline-block;
+    margin: 0 100px;
+}
