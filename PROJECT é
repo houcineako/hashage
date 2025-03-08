@@ -1,0 +1,23 @@
+import requests
+def search_vulnerabilities(service_name, api_key):
+    print(f"Searching for vulnerabilities for {service_name}...")
+    url = f"https://api.vuldb.com/v1/vulnerabilities/{service_name}"  # URL d'exemple, assure-toi qu'elle est correcte
+    headers = {
+        "Authorization": f"Bearer {api_key}" }
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()  # Vérifie si la requête a échoué et lève une exception
+    except requests.exceptions.RequestException as e:
+        print(f"An error occurred: {e}")
+        return
+    vulnerabilities = response.json()
+    if isinstance(vulnerabilities, list):  # Vérifie que les données sont bien dans une liste
+        for vuln in vulnerabilities:
+            print(f"Vulnerability ID: {vuln.get('id', 'N/A')}")
+            print(f"Title: {vuln.get('title', 'N/A')}")
+            print(f"Description: {vuln.get('description', 'N/A')}")
+            print("-----")
+    else:
+        print("Unexpected data format received.")
+api_key = "YOUR_API_KEY"  # Remplace par ta clé API
+search_vulnerabilities("apache", api_key)

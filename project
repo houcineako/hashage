@@ -1,0 +1,22 @@
+from scapy.all import *
+
+def detect_os(target_ip):
+    print(f"Detecting OS on {target_ip}...")
+    response = sr1(IP(dst=target_ip)/ICMP(), timeout=1, verbose=0)
+
+    if response is None:
+        print("Host is down or not responding")
+    elif response.getlayer(ICMP).type == 0:
+        print("Host is likely up - Ping response received")
+        ttl = response.ttl
+        if ttl <= 64:
+            print("OS might be Linux-based")
+        elif ttl > 64 and ttl <= 128:
+            print("OS might be Windows-based")
+        else:
+            print("OS type unclear")
+    else:
+        print("No reliable response for OS detection")
+# Définis l'adresse IP cible ici
+target_ip = "192.168.1.1"  # Remplace par l'adresse IP souhaitée
+detect_os(target_ip)
